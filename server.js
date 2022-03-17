@@ -48,6 +48,15 @@ app.get("/api/models", async (req, res, next) => {
   }
 });
 
+app.get("/api/brands", async (req, res, next) => {
+  try {
+    const brands = await Brand.findAll();
+    res.send(brands);
+  } catch (ex) {
+    next(ex);
+  }
+});
+
 const port = process.env.PORT || 3000;
 
 const init = async () => {
