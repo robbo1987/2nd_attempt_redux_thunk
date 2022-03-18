@@ -1,7 +1,6 @@
 import React from "react";
 import { render } from "react-dom";
-import axios from "axios";
-import store from "./store";
+import store, {loadBrands,loadModels} from "./store";
 import { Provider, connect } from "react-redux";
 import Models from "./Models";
 import Brands from "./brands"
@@ -14,10 +13,8 @@ const App = connect(
   (dispatch) => {
     return {
       bootStrap: async () => {
-        const models = (await axios.get("/api/models")).data;
-        dispatch({ type: "LOAD_MODELS", models });
-        const brands = (await axios.get("/api/brands")).data;
-        dispatch({ type: "LOAD_BRANDS", brands });
+        dispatch(loadBrands());
+        dispatch(loadModels())
       },
     };
   }
