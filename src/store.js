@@ -1,6 +1,6 @@
 import { createStore, combineReducers } from "redux";
 const LOAD_MODELS = "LOAD_MODELS";
-const LOAD_BRANDS = "LOAD_BRANDS"
+const LOAD_BRANDS = "LOAD_BRANDS";
 
 const modelReducer = (state = [], action) => {
   if(action.type === LOAD_MODELS) {

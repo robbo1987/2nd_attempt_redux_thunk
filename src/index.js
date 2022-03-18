@@ -4,6 +4,8 @@ import axios from "axios";
 import store from "./store";
 import { Provider, connect } from "react-redux";
 import Models from "./Models";
+import Brands from "./brands"
+
 
 const App = connect(
   (state) => {
@@ -33,6 +35,7 @@ const App = connect(
           <Models />
 
           <h1> Brands That We Carry:</h1>
+          <Brands />
           <h3>Contact Info:</h3>
           <div> Robby's Guitar Shop </div>
           <div> 314 Grand Street</div>
