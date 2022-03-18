@@ -3,7 +3,9 @@ import { render } from "react-dom";
 import store, {loadBrands,loadModels} from "./store";
 import { Provider, connect } from "react-redux";
 import Models from "./Models";
-import Brands from "./brands"
+import Brands from "./brands";
+import Nav from "./Nav"
+import { HashRouter} from "react-router-dom"
 
 
 const App = connect(
@@ -26,7 +28,9 @@ const App = connect(
 
     render() {
       return (
+        <HashRouter>
         <div>
+          <Nav />
           <h1>Welcome To Robby's Store!</h1>
           <h1>Models:</h1>
           <Models />
@@ -38,6 +42,7 @@ const App = connect(
           <div> 314 Grand Street</div>
           <div>Jersey City, NJ </div>
         </div>
+        </HashRouter>
       );
     }
   }
